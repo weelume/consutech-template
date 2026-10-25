@@ -1,0 +1,84 @@
+{
+  "$schema": "../schemas/verification.schema.json",
+  "format": "git-template-verification",
+  "formatVersion": "0.2.0",
+  "status": "passed",
+  "checkedAt": "2026-10-25T10:22:35.434Z",
+  "sourceCommit": "d99b1296e5d0aad5e6f0cd283bd21c67755597c2",
+  "sourceDigest": "813368ec8a2634097c50cd4820d06bf4a72f55efdb093724e9eccf646000380b",
+  "environment": {
+    "platform": "linux",
+    "arch": "x64",
+    "node": "v24.16.0",
+    "packageManager": "pnpm@9.15.4",
+    "cleanDirectory": true,
+    "localGitClone": false
+  },
+  "checks": [
+    {
+      "id": "typecheck",
+      "cwd": ".",
+      "argv": [
+        "pnpm",
+        "run",
+        "typecheck"
+      ],
+      "status": "passed",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T10:20:22.622Z",
+      "finishedAt": "2026-10-25T10:20:24.867Z"
+    },
+    {
+      "id": "lint",
+      "cwd": ".",
+      "argv": [
+        "pnpm",
+        "run",
+        "lint"
+      ],
+      "status": "passed",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T10:20:24.867Z",
+      "finishedAt": "2026-10-25T10:20:28.166Z"
+    },
+    {
+      "id": "test",
+      "cwd": ".",
+      "argv": [
+        "pnpm",
+        "run",
+        "test"
+      ],
+      "status": "passed",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T10:20:28.166Z",
+      "finishedAt": "2026-10-25T10:20:29.155Z"
+    },
+    {
+      "id": "build",
+      "cwd": ".",
+      "argv": [
+        "pnpm",
+        "run",
+        "build"
+      ],
+      "status": "passed",
+      "exitCode": 0,
+      "startedAt": "2026-10-25T10:20:29.155Z",
+      "finishedAt": "2026-10-25T10:20:45.994Z"
+    }
+  ],
+  "services": [
+    {
+      "id": "web",
+      "status": "passed",
+      "stopped": true,
+      "checkedAt": "2026-10-25T10:20:47.650Z"
+    }
+  ],
+  "limitations": [
+    "原站三端逐时刻完整运动轨迹对照未完成；原站浏览器触发操作发生超时。",
+    "悬停逐字与减少动态效果尚未通过系统仿真实测，不能宣称全部动效验收通过。",
+    "第三方素材商业再分发权利未核实；保持未上架。"
+  ]
+}
