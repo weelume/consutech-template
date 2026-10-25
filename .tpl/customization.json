@@ -1,0 +1,107 @@
+{
+  "format": "git-template-customization",
+  "formatVersion": "0.2.0",
+  "entries": [
+    {
+      "id": "brand",
+      "title": "品牌",
+      "description": "修改品牌后验证相应页面和语言。",
+      "files": [
+        {
+          "path": "src/features/site-templates/catalog/consutech/config/brand.ts",
+          "kind": "file",
+          "purpose": "品牌"
+        }
+      ],
+      "constraints": [
+        "保持中英文一致，不添加依赖或外部数据发送。"
+      ],
+      "checks": [
+        "typecheck",
+        "lint",
+        "test"
+      ]
+    },
+    {
+      "id": "content",
+      "title": "双语内容",
+      "description": "修改双语内容后验证相应页面和语言。",
+      "files": [
+        {
+          "path": "src/features/site-templates/catalog/consutech/content/data.ts",
+          "kind": "file",
+          "purpose": "双语内容"
+        }
+      ],
+      "constraints": [
+        "保持中英文一致，不添加依赖或外部数据发送。"
+      ],
+      "checks": [
+        "typecheck",
+        "lint",
+        "test"
+      ]
+    },
+    {
+      "id": "theme",
+      "title": "主题",
+      "description": "修改主题后验证相应页面和语言。",
+      "files": [
+        {
+          "path": "src/features/site-templates/catalog/consutech/tokens.css",
+          "kind": "file",
+          "purpose": "主题"
+        }
+      ],
+      "constraints": [
+        "保持中英文一致，不添加依赖或外部数据发送。"
+      ],
+      "checks": [
+        "typecheck",
+        "lint",
+        "test"
+      ]
+    },
+    {
+      "id": "motion",
+      "title": "交互与动效",
+      "description": "修改交互与动效后验证相应页面和语言。",
+      "files": [
+        {
+          "path": "src/features/site-templates/catalog/consutech/components",
+          "kind": "directory",
+          "purpose": "交互与动效"
+        }
+      ],
+      "constraints": [
+        "保持中英文一致，不添加依赖或外部数据发送。"
+      ],
+      "checks": [
+        "typecheck",
+        "lint",
+        "test"
+      ]
+    },
+    {
+      "id": "pages",
+      "title": "页面组合",
+      "description": "修改页面组合后验证相应页面和语言。",
+      "files": [
+        {
+          "path": "src/features/site-templates/catalog/consutech/pages",
+          "kind": "directory",
+          "purpose": "页面组合"
+        }
+      ],
+      "constraints": [
+        "保持中英文一致，不添加依赖或外部数据发送。"
+      ],
+      "checks": [
+        "typecheck",
+        "lint",
+        "test"
+      ]
+    }
+  ],
+  "$schema": "./schemas/customization.schema.json"
+}

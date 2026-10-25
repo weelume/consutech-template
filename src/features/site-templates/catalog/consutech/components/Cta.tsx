@@ -1,0 +1,6 @@
+'use client';
+import {href} from '../routing';
+import {ui,text,media,type Locale} from '../content/data';
+import {Reveal} from './Motion';
+import {Button} from './Shell';
+export function Cta({basePath,locale}:{basePath:string;locale:Locale}){return <section className="ct-section ct-cta"><div className="ct-container ct-cta-layout"><div className="ct-cta-copy"><Reveal y={40} duration={1.2}><h2 className="ct-preline">{text(ui.next,locale)}</h2></Reveal><Reveal y={40} duration={1.2} delay={.15}><p>{text(ui.nextCopy,locale)}</p></Reveal><Reveal y={40} duration={1.2} delay={.3}><Button white to={href(basePath,'contact')}>{text(ui.book,locale)}</Button></Reveal></div><div className="ct-cta-images"><div><Reveal x={80} y={0} scale={.95} blur={0} duration={1.6} className="ct-cta-small"><img src={media('cta-img-1.png')} alt={locale==='zh'?'咨询顾问':'Consultant'}/></Reveal><Reveal x={100} y={0} scale={.95} blur={0} duration={1.8} className="ct-cta-wide"><img src={media('cta-img-2.png')} alt={locale==='zh'?'合作讨论':'Collaborative discussion'}/></Reveal></div><Reveal x={120} y={0} scale={.95} blur={0} duration={2} className="ct-cta-tall"><img src={media('cta-img-3.png')} alt={locale==='zh'?'软件工程工作台':'Software engineering workspace'}/></Reveal></div></div></section>}

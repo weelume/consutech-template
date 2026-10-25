@@ -1,0 +1,7 @@
+'use client';
+import {href} from '../routing';
+import Link from 'next/link';
+import {useState} from 'react';
+import {articles,ui,text,media,type Locale} from '../content/data';
+import {Reveal,debug} from './Motion';
+export function ArticleList({basePath,locale}:{basePath:string;locale:Locale}){const [query,setQuery]=useState(''),filtered=articles.filter(item=>(text(item.title,locale)+' '+text(item.description,locale)).toLowerCase().includes(query.toLowerCase().trim()));return <section className="ct-container ct-section"><label className="ct-search">{text(ui.search,locale)}<input type="search" value={query} onChange={event=>{setQuery(event.target.value);debug('blog.search',{queryLength:event.target.value.length})}}/></label><p className="ct-results" role="status">{locale==='zh'?`${filtered.length} 篇文章`:`${filtered.length} articles`}</p><div className="ct-card-grid">{filtered.map((article,index)=><Reveal key={article.slug} delay={index*.1}><Link className="ct-content-card ct-glass" href={href(basePath,'blog/'+article.slug)}><div className="ct-card-image"><img src={media(article.image)} alt={text(article.title,locale)}/></div><div className="ct-card-copy"><span className="ct-eyebrow">{text(article.category,locale)}</span><h2>{text(article.title,locale)}</h2><p>{text(article.description,locale)}</p><span className="ct-card-link">{text(ui.read,locale)}</span></div></Link></Reveal>)}</div>{filtered.length===0&&<p>{text(ui.noResults,locale)}</p>}</section>}

@@ -1,0 +1,1 @@
+import type {ReactNode} from 'react';import './globals.css';export const metadata={title:'ConsuTech · AI 企业咨询',description:'以智能驱动，让增长成为可能',robots:{index:false,follow:false}};export default function Layout({children}:{children:ReactNode}){return <html lang="zh-CN"><body>{children}</body></html>}

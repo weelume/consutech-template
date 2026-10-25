@@ -1,0 +1,8 @@
+'use client';
+import {href} from '../routing';
+import {useState} from 'react';
+import {AnimatePresence,motion,useReducedMotion} from 'framer-motion';
+import {faqs,ui,text,type Locale} from '../content/data';
+import {Reveal,ease,debug} from './Motion';
+import {Button} from './Shell';
+export function Faq({basePath,locale}:{basePath:string;locale:Locale}){const [active,setActive]=useState(0),reduced=useReducedMotion();return <section className="ct-section ct-faq" id="faq"><div className="ct-container ct-faq-layout"><Reveal x={-60} y={0} className="ct-faq-intro"><h2>{text(ui.faq,locale)}</h2><p>{text(ui.faqCopy,locale)}</p><Button outline to={href(basePath,'contact')}>{text(ui.talk,locale)}</Button></Reveal><div>{faqs.map((faq,index)=><Reveal key={index} x={80} y={0} delay={index*.08} className="ct-faq-item"><h3><button aria-expanded={active===index} aria-controls={'ct-answer-'+index} onClick={()=>{setActive(active===index?-1:index);debug('faq.toggle',{index,open:active!==index})}}>{text(faq.question,locale)}<span className="ct-plus" aria-hidden="true"><motion.i animate={{rotate:active===index?180:0}} transition={{duration:reduced?0:.35,ease}}/><motion.i animate={{rotate:active===index?90:0,opacity:active===index?0:1,scaleY:active===index?0:1}} transition={{duration:reduced?0:.35,ease}}/></span></button></h3><AnimatePresence initial={false}>{active===index&&<motion.div id={'ct-answer-'+index} className="ct-collapse" initial={{height:0,opacity:0}} animate={{height:'auto',opacity:1}} exit={{height:0,opacity:0}} transition={{duration:reduced?0:.35,ease}}><p>{text(faq.answer,locale)}</p></motion.div>}</AnimatePresence></Reveal>)}</div></div></section>}
